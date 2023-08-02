@@ -3,6 +3,7 @@ package com.api.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -15,20 +16,20 @@ public class Product {
 
     private String productDescription;
 
-    private LocalDateTime expDate;
+    private LocalDate expDate;
 
     public void setProductId(Integer productId){
         this.productId = productId;
     }
 
-    public void setProductName(Integer productId){
-        this.productId = productId;
+    public void setProductName(String ProductName){
+        this.productName = productName;
     }
-    public void setProductDescription(Integer productId){
-        this.productId = productId;
+    public void setProductDescription(String productDescription){
+        this.productDescription = productDescription;
     }
-    public void setExpDate(Integer productId){
-        this.productId = productId;
+    public void setExpDate(LocalDate expDate){
+        this.expDate = expDate;
     }
 
     public Integer getProductId(){
@@ -43,8 +44,11 @@ public class Product {
         return this.productDescription;
     }
 
-    public LocalDateTime getExpDate(){
+    public LocalDate getExpDate(){
         return this.expDate;
     }
-
+    @Override
+    public String toString() {
+        return this.productName;
+    }
 }
